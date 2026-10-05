@@ -1,65 +1,31 @@
-# העלאת האתר לדומיין
+# פרסום ועדכון האתר
 
-האתר הוא תיקייה של קבצים. אין שרת ואין מסד נתונים, ולכן מספיק אחסון סטטי חינמי.
+האתר הוא תיקייה של קבצים סטטיים. אין שרת ואין מסד נתונים. הוא מתארח **בחינם ב-GitHub Pages** ונבנה ומתפרסם אוטומטית בכל שמירה.
 
-## 1. לבחור ולרכוש דומיין (רק בעלת האתר יכולה)
+## הפרטים
+- כתובת האתר: https://www.kerrenwolf.co.il (בתהליך מעבר לכתובת בלי www: https://kerrenwolf.co.il)
+- המאגר ב-GitHub: https://github.com/kerrenvol-byte/kerrenvol-byte.github.io
+- בנייה ופרסום: `.github/workflows/pages.yml`. כל שמירה ל-`main` מריצה `node scripts/build-static.mjs https://kerrenwolf.co.il` ומפרסמת את התיקייה `deploy/`. זה לוקח כדקה-שתיים, ללא מגבלת קרדיטים.
+- הדומיין נרשם ב-InterNIC (תוקף עד 1.10.2027, החידוש בתשלום). רשומות ה-DNS בפורטל InterNIC: `A` של הדומיין ← כתובות GitHub (`185.199.108-111.153`), ו-`www` CNAME ← `kerrenvol-byte.github.io.`
+- Google Search Console: הנכס `https://kerrenwolf.co.il/` אומת באמצעות הקובץ `verify/google4465869a4914c590.html` (מועתק לשורש בבנייה, אסור למחוק).
 
-בדיקה ב-DNS מ-30 בספטמבר 2026 הראתה שהכתובות האלה כנראה פנויות (הוודאות רק ברגע הרכישה):
+## איך עורכים בעצמך (בלי להתקין כלום)
+1. נכנסים ל-GitHub עם החשבון `kerrenvol-byte`, ופותחים את המאגר.
+2. פותחים קובץ, למשל `content/recipes.js` (המתכונים) או `content/site.js` (שאר הטקסטים), ולוחצים על העיפרון.
+3. מתקנים טקסט ולוחצים **Commit changes**.
+4. כעבור דקה-שתיים האתר מתעדכן. אפשר לעקוב בלשונית **Actions**.
 
-- `kerenthevegan.com` (תואם לאינסטגרם, מומלץ)
-- `kerenthevegan.co.il`
-- `keren-wolf.co.il`, `keren-wolf.com`
-- `kerenwolfkitchen.co.il`, `wolfkitchen.co.il`
+## איך עורכים איתי
+אני עובד על התיקייה `KERREN\keren-wolf-site` במחשב, בודק מקומית, ושומר ל-GitHub בפקודה אחת (`git push`). הפרסום אוטומטי.
 
-`kerenwolf.co.il` ו-`kerenwolf.com` תפוסים.
-דומיין `.com` אפשר לרכוש אצל כל רשם בינלאומי. דומיין `.co.il` אצל רשם ישראלי מורשה מטעם ISOC-IL.
-
-## 2. לבנות גרסת פרסום
-
-אחרי שהדומיין נבחר:
-
-```bash
-node scripts/build-static.mjs https://kerenthevegan.com
-```
-
-(מחליפים בכתובת האמיתית, בלי סלאש בסוף.) נוצרת התיקייה `deploy/` ובה:
-
-- עמוד אמיתי לכל מתכון (`/recipe/<שם>/`) עם כותרת, תיאור וסכמת Recipe של גוגל.
-- `sitemap.xml`, `robots.txt`, `404.html` ו-`_headers` (מטמון לתמונות).
-
-אפשר לבקש מ-Claude להריץ את זה ולוודא שהכול עובד.
-
-## 3. להעלות את `deploy/`
-
-אחת משלוש הדרכים, כולן חינמיות:
-
-- **Netlify Drop:** גוררים את התיקייה `deploy/` ל-https://app.netlify.com/drop.
-- **Cloudflare Pages:** Workers & Pages, Create, Pages, Upload assets, ומעלים את `deploy/`.
-- **GitHub Pages:** מעלים את תוכן `deploy/` למאגר ומפעילים Pages.
-
-## 4. לחבר את הדומיין
-
-באחסון שנבחר: Custom domain, מזינים את הדומיין, ומעתיקים אצל הרשם את רשומות ה-DNS שהאחסון מציג (בדרך כלל CNAME ל-`www` ורשומת A או ALIAS לשורש). תעודת HTTPS מתקבלת אוטומטית.
-
-## מצב נוכחי (1.10.2026)
-
-- האתר פורסם ב-Netlify (חשבון kerrenvol@gmail.com, אתר `kerrenwolf`): https://kerrenwolf.netlify.app
-- הדומיין `kerrenwolf.co.il` חובר לאתר ב-Netlify. כדי שיעבוד צריך אצל הרשם: רשומת A לשורש (`@`) אל `75.2.60.5`, ורשומת CNAME ל-`www` אל `kerrenwolf.netlify.app`.
-- Google Search Console: הנכס `https://kerrenwolf.co.il/` אומת ב-1.10.2026 באמצעות קובץ HTML (`verify/google4465869a4914c590.html`, מועתק לשורש בבנייה, אסור למחוק). ה-sitemap נשלח.
-- הרשמה לעדכונים: הוסרה מהאתר ב-4.10.2026 לבקשת קרן (הסעיף בדף הפרטיות וגם הטופס ב-Netlify).
-- עדכון האתר אחרי שינוי תוכן (דורש Node.js):
-
+## הרצה מקומית (לבדיקה)
 ```bash
 node scripts/build-static.mjs https://kerrenwolf.co.il
-npx netlify-cli deploy --dir deploy --prod --no-build
 ```
+ואז לפתוח את `deploy/` עם שרת סטטי (למשל `npx serve deploy`).
 
-- אחרי הבנייה למחוק מ-`deploy/images` את `066*.webp` (תמונות הסיור שהוסר).
-
-## 5. אחרי שהאתר באוויר
-
-- ב-Google Search Console: מוסיפים את הדומיין ושולחים את `https://הדומיין/sitemap.xml`.
-- לבדוק מתכון אחד בכלי "Rich Results Test" של גוגל.
-- עמוד הפרטיות ב-`content/site.js` עודכן ב-1.10.2026 (בלי ChatGPT Sites, בלי טפסים שנשמרים ובלי אזור ניהול). אחרי שבוחרים אחסון, אפשר להוסיף את שם הספק.
-- אם רוצים שהרשמה לעדכונים תישמר בפועל: לחבר שירות (למשל רשימת תפוצה) ולהדביק את הכתובת ב-`newsletter.endpoint`.
-- כל שינוי בתוכן: לערוך, להריץ שוב את פקודת הבנייה, ולהעלות מחדש את `deploy/`.
+## כללים
+- אחרי הבנייה לא להעלות ידנית תמונות של סיור אשדוד (`images/066*.webp`): הן ב-`.gitignore` והדף הוסר מהאתר.
+- ההרשמה לעדכונים הוסרה מהאתר ב-4.10.2026 לבקשת קרן.
+- עמוד הפרטיות, תנאי השימוש והצהרת הנגישות ב-`content/site.js` (טיוטות סבירות, לא ייעוץ משפטי). פרטי רכזת הנגישות מופיעים בהצהרה.
+- Netlify שימש לפני כן (אתר `kerrenwolf`). חשבון Free עם 300 קרדיטים בחודש, שנגמרו ב-4.10.2026, ולכן עברנו ל-GitHub Pages.
