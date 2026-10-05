@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>קרן וולף | מתכונים טבעוניים פשוטים</title>
+<meta name="description" content="מתכונים טבעוניים פשוטים וביתיים ממצרכים שיש בכל מכולת. המטבח של קרן וולף.">
+<meta name="theme-color" content="#6f8f79">
+<meta property="og:title" content="קרן וולף | מתכונים טבעוניים פשוטים">
+<meta property="og:description" content="אוכל טוב. בלי לעשות מזה סיפור.">
+<link rel="icon" type="image/svg+xml" href="assets/logo/original-icon-profile.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Hebrew:wght@500;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main" data-skip>דלגו לתוכן</a>
+
+<header class="top" id="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#/" aria-label="קרן וולף, לדף הבית">
+      <img class="brand__mark" src="assets/logo/logo-mark-green.svg" alt="" width="44" height="43">
+      <span class="brand__text"><img class="brand__word" src="assets/logo/logo-word-green.svg" alt="" width="70" height="46"><small>קרן וולף</small></span>
+    </a>
+    <form class="top__search" role="search" data-top-search>
+      <label class="sr" for="top-q">חיפוש מתכון</label>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="top-q" name="q" type="search" placeholder="חפשו מתכון או מרכיב" autocomplete="off">
+    </form>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <a href="#/recipes" data-nav="recipes">כל המתכונים</a>
+      <a href="#/about" data-nav="about">קצת עליי</a>
+      <a href="#/contact" data-nav="contact">יצירת קשר</a>
+    </nav>
+    <a class="favlink" href="#/recipes?fav=1" aria-label="המתכונים ששמרתי">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.7 8 3.6 5 6.7 5c1.9 0 3.5 1 5.3 3 1.8-2 3.4-3 5.3-3 3.1 0 5 3 3.9 6.2-1.7 4.7-9.2 9.3-9.2 9.3z"/></svg>
+      <b data-favcount hidden>0</b>
+    </a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<div class="timers" id="timers" role="status" aria-live="polite" aria-label="טיימרים פעילים"></div>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="assets/logo/logo-full-cream.svg" alt="קרן וולף" width="120" height="196">
+      <p>אוכל טוב. בלי לעשות מזה סיפור.</p>
+    </div>
+    <nav aria-label="ניווט תחתון" class="foot__col">
+      <b>באתר</b>
+      <a href="#/recipes">כל המתכונים</a>
+      <a href="#/recipes?fav=1">השמורים שלי</a>
+      <a href="#/about">קצת עליי</a>
+      <a href="#/contact">יצירת קשר</a>
+    </nav>
+    <div class="foot__col">
+      <b>בקשר</b>
+      <a href="https://www.instagram.com/kerren_wolf/" target="_blank" rel="noopener" dir="ltr">@kerren_wolf</a>
+      <a href="mailto:kerrenvol@gmail.com" dir="ltr">kerrenvol@gmail.com</a>
+    </div>
+  </div>
+  <div class="wrap foot__legal">
+    <span>© 2026 קרן וולף</span>
+    <a href="#/privacy">פרטיות</a>
+    <a href="#/terms">תנאי שימוש</a>
+    <a href="#/accessibility">הצהרת נגישות</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:2rem;text-align:center">האתר צריך JavaScript כדי להציג את המתכונים.</p></noscript>
+<script src="content/site.js"></script>
+<script src="content/recipes.js"></script>
+<script src="js/app.js"></script>
+<script src="js/a11y.js"></script>
+</body>
+</html>

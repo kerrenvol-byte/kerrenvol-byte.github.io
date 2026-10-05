@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="300 160 410 400"><g transform="translate(312.8,146.88685515526703) scale(0.72)"><defs><mask id="m-logo-mark-black"><rect x="-50" y="-50" width="620" height="690" fill="#fff"/><circle cx="307.5" cy="280.6" r="239" fill="#000"/></mask></defs><g fill="#1f1f1f"><circle cx="268" cy="295" r="262" mask="url(#m-logo-mark-black)"/><path d="M30 330
+ C 100 250, 180 180, 248 120
+ C 256 113, 265 116, 265 126
+ L 267 222
+ C 268 238, 280 248, 296 260
+ C 332 290, 346 334, 386 358
+ C 398 365, 392 381, 378 378
+ C 334 366, 306 326, 282 294
+ C 264 270, 234 262, 230 240
+ L 228 190
+ C 160 245, 110 295, 76 350
+ L 30 350 Z"/></g></g></svg>

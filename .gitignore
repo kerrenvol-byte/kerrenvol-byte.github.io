@@ -1,0 +1,6 @@
+deploy/
+.netlify/
+node_modules/
+docs/screens/
+images/066*.webp
+*.bak
